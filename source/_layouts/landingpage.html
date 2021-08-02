@@ -52,7 +52,8 @@ layout: page
                   <div class="title">{{entry.title}}</div>
                   <div class="description">{{entry.description}}</div>
                   {% if entry.read_more %}
-                    <a class="button" href="{{entry.read_more}}">READ MORE</a>
+                    {% assign first_char = entry.read_more | slice: 0, 1 %}
+                    <a class="button" href="{{entry.read_more}}" {% if first_char != "/" %}target="_blank"{% endif %}>READ MORE</a>
                   {% endif %}
               </div>
           </div>
