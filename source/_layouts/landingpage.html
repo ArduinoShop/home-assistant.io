@@ -45,7 +45,9 @@ layout: page
 
         {% for entry in section.entries %}
           <div class="section-inner">
-              <img src="{{entry.image}}">
+              <div class="section-inner-content">
+                <img {% if entry.image_description %} title="{{ entry.image_description }}" {% endif %} src="{{entry.image}}">
+              </div>
               <div class="section-inner-content">
                   <div class="title">{{entry.title}}</div>
                   <div class="description">{{entry.description}}</div>
